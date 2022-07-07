@@ -1,6 +1,7 @@
 <div align="center">
 
 # Code Editor
+![](./assets/code-editor.gif)
 </div>
 
 ## ℹ️ About Project

@@ -1,3 +1,5 @@
+let minimizeClick = false;
+
 const htmlInputContent = CodeMirror.fromTextArea(document.getElementById("htmlInputContent"), {
     htmlMode: true,
     autoCloseTags: true,
