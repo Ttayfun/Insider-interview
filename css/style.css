@@ -1,0 +1,7 @@
+iframe{
+    height: 300px;
+}
+
+[class*='col'] {
+    transition: all 0.6s ease-in-out;
+}
