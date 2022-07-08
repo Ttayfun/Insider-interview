@@ -61,7 +61,24 @@ jsInputContent.on("change", () => saveAllCode('jsInputContent', jsInputContent.g
 cssInputContent.on("change", () => saveAllCode('cssInputContent', cssInputContent.getValue()));
 
 function saveAllCode(editor, draft) {
+    let projectHistories = JSON.parse(localStorage.getItem('projectHistories')) || [];
+    if (selectedProject.id) {
+        const selectedProjectIndex = projectHistories.findIndex(item => item.id == selectedProject.id);
+        switch (editor) {
+            case 'htmlInputContent' :
+                projectHistories[selectedProjectIndex].html = draft;
+                break;
+            case 'jsInputContent' :
+                projectHistories[selectedProjectIndex].js = draft;
+                break;
+            case 'cssInputContent':
+                projectHistories[selectedProjectIndex].css = draft;
+                break;
+        }
+        localStorage.setItem('projectHistories', JSON.stringify(projectHistories))
+    }
     localStorage.setItem(editor, JSON.stringify(draft))
+
 }
 
 
